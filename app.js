@@ -1,35 +1,55 @@
-const playerFactory = (name, mark) => ({
-  name,
-  mark,
-});
+import { playerFactory } from './factories.js';
+// import { checkForWinner, checkForDraw } from './utils.js';
 
-const game = ((p1 = 'Player One', p2 = 'Player Two') => ({
-  // players
-  player1: playerFactory(p1, 'X'),
-  player2: playerFactory(p2, 'O'),
-  players: [this.player1, this.player2],
-  // board
+// TODO const gameLogic = (() => {})();
 
-  board: (() => {
-    const field = ['x', 'o', null, null, null, null, null, null, null];
-    const cells = [...document.querySelectorAll('.cell')];
-    const winLines = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6],
-    ];
-    const render = () => {
-      for (let i = 0; i < field.length; i++) {
-        cells[i].textContent = field[i];
-      }
-    };
-    return { render };
-  })(),
-  // logic
-  logic: (() => {})(),
-}))();
+const board = () => {
+  const field = [null, null, null, null, null, null, null, null, null];
+  const cells = [...document.querySelectorAll('.cell')];
+
+  const writeToField = (idx, mark) => {
+    field[idx] = mark;
+  };
+
+  const render = () => {
+    for (let i = 0; i < field.length; i++) {
+      cells[i].textContent = field[i];
+    }
+  };
+
+  return { render, writeToField };
+};
+
+const game = ((gameBoard, p1 = 'Player One', p2 = 'Player Two') => {
+  const board = gameBoard();
+  const player1 = playerFactory(p1, 'X');
+  const player2 = playerFactory(p2, 'O');
+  let currentPlayer = player1;
+
+  (() => {
+    board.render();
+  })();
+
+  const changePlayer = () => {
+    currentPlayer = currentPlayer === player1 ? player2 : player1;
+  };
+
+  const move = e => {
+    const { mark } = currentPlayer;
+    const index = e.target.dataset.cellIdx;
+    board.writeToField(index, mark);
+    // checkForWinner(board);
+    // checkForDraw();
+    changePlayer();
+    board.render();
+  };
+
+  return {
+    move,
+  };
+})(board);
+
+(() => {
+  const grid = document.querySelector('.board');
+  grid.addEventListener('click', e => game.move(e));
+})();
