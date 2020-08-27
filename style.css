@@ -1,0 +1,108 @@
+:root {
+  --cell-size: 150px;
+  --mark-size: calc(var(--cell-size) * 0.9);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+}
+
+.board {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
+}
+
+.cell:nth-child(3n + 1) {
+  border-left: none;
+}
+
+.cell:nth-child(3n + 3) {
+  border-right: none;
+}
+
+.cell:last-child,
+.cell:nth-child(7),
+.cell:nth-child(8) {
+  border-bottom: none;
+}
+
+.end-msg {
+  display: none;
+}
+
+.start-modal {
+  position: absolute;
+  /* display: grid; */
+  display: none;
+  place-items: center;
+  color: white;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.705);
+}
+
+.start-modal h3 {
+  margin: 0;
+  font-size: 3rem;
+}
+
+.start-modal button {
+  border: none;
+  padding: 9px;
+  border-radius: 3px;
+  background: rgb(43, 214, 109);
+}
+
+.start-modal form {
+  background: rgba(0, 0, 0, 0.582);
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  width: 30%;
+  justify-content: space-around;
+}
+
+.input {
+  display: flex;
+  height: 80px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
