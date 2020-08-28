@@ -12,6 +12,7 @@ This Project follows the lesson about Factory Functions and The Module Pattern s
 
 ## Live Demo
 
+- [Live Demo Link](https://rawcdn.githack.com/dili021/ticTacToe/3cc066692cad6a3de41f1b66949456c49beb4ac3/index.html)
 
 ## Getting Started
 
