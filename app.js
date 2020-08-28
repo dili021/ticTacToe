@@ -95,5 +95,5 @@ const game = ((gameBoard, p1 = 'Player One', p2 = 'Player Two') => {
 })(board);
 
 (() => {
-  elements.grid.addEventListener('click', e => game.move(e));
+  elements.grid.addEventListener('click', game.move);
 })();
