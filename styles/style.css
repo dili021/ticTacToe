@@ -1,6 +1,6 @@
 :root {
   --cell-size: 150px;
-  --mark-size: calc(var(--cell-size) * 0.9);
+  --mark-size: calc(var(--cell-size) * 0.8);
 }
 
 *,
@@ -12,6 +12,21 @@
 body {
   margin: 0;
   text-align: center;
+}
+
+header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 3rem;
+}
+
+header :first-child {
+  color: rgb(55, 197, 55);
+}
+
+header :nth-child(2) {
+  color: rgb(247, 31, 31);
 }
 
 .board {
@@ -28,6 +43,7 @@ body {
 .cell {
   width: var(--cell-size);
   height: var(--cell-size);
+  font-size: var(--mark-size);
   border: 1px solid black;
   display: flex;
   justify-content: center;
@@ -64,6 +80,7 @@ body {
   right: 0;
   background: rgba(0, 0, 0, 0.623);
 }
+
 .end-msg {
   background: rgba(0, 0, 0, 0.822);
   padding: 30px;
@@ -72,6 +89,7 @@ body {
   color: white;
   font-size: 1.3rem;
 }
+
 button {
   background: rgb(118, 238, 118);
   border: none;
@@ -85,8 +103,9 @@ button:hover {
 }
 
 .start-modal {
+  font-size: 1.6rem;
   position: absolute;
-  display: none;
+  display: grid;
   place-items: center;
   color: white;
   left: 0;
@@ -98,7 +117,7 @@ button:hover {
 
 .start-modal h3 {
   margin: 0;
-  font-size: 3rem;
+  font-size: 2.4rem;
 }
 
 .start-modal button {
@@ -110,12 +129,12 @@ button:hover {
 
 .start-modal form {
   background: rgba(0, 0, 0, 0.582);
-  padding: 15px;
+  padding: 25px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   height: 60%;
-  width: 30%;
+  width: 50%;
   justify-content: space-around;
 }
 

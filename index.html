@@ -3,10 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <title>Tic Tac Toe</title>
   </head>
   <body>
+    <header>
+      <div id="player-one"></div>
+      <div id="player-two"></div>
+    </header>
     <div class="board" id="board">
       <div class="cell" data-cell-idx="0"></div>
       <div class="cell" data-cell-idx="1"></div>
@@ -21,7 +25,7 @@
     <div class="start-modal" id="start-modal">
     <form>
       <div class="text">
-        <h3>Welcome!</h3>
+        <h3>Welcome to Tic Tac Toe!</h3>
         <br />
         <span>You can leave names blank if you don't care</span>
       </div>
@@ -34,11 +38,11 @@
   </div>
     <div id="end-modal" class="end-modal">
       <div class="end-msg">
-          <p id="winner">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, beatae.</p>
+          <p id="winner"></p>
           <button id="new-game">Play Again</button>
         </div>
       </div>
     </div>
-    <script src="app.js" type="module"></script>
+    <script src="./js/app.js" type="module"></script>
   </body>
 </html>
