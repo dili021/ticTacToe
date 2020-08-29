@@ -30,22 +30,27 @@ elements.startButton.addEventListener('click', () => {
       showEndModal() && elements.grid.replayEventListener('click', game.play);
 
     const playerHasWon = player => {
+      let res;
       board.getWinLines().forEach(line => {
         if (line.every(spot => board.getField()[spot] === player.mark)) {
           elements.winner.textContent = `Congratulations ${currentPlayer.name} you won!`;
-          endGame();
+          res = true;
         }
       });
+      return res;
     };
 
     const gameIsDraw = () => {
+      let res;
+
       if (
         board.getField().every(spot => spot !== null) &&
         !playerHasWon(currentPlayer)
       ) {
         elements.winner.textContent = 'The game is draw. Want a rematch?';
-        endGame();
+        res = true;
       }
+      return res;
     };
 
     const showEndModal = () => {
