@@ -21,7 +21,7 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 1. Have latest version of JS installed.
-2. Browser version up to date
+2. Install the latest version of your browser of choice.
 
 ### Setup
 
