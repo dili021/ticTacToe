@@ -71,5 +71,3 @@ elements.startButton.addEventListener('click', () => {
   })(board, elements.playerOneInput.value, elements.playerTwoInput.value);
   elements.grid.addEventListener('click', game.play);
 });
-
-export default board;
