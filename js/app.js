@@ -67,7 +67,6 @@ const game = (gameBoard, p1, p2) => {
     board.render();
   };
 
-<<<<<<< HEAD
   return { play };
 };
 
@@ -76,9 +75,3 @@ elements.startButton.addEventListener('click', () => {
   elements.grid.addEventListener('click', newGame.play);
 });
 export default board;
-=======
-    return { play };
-  })(board, elements.playerOneInput.value, elements.playerTwoInput.value);
-  elements.grid.addEventListener('click', game.play);
-});
->>>>>>> d7cf91493e6e7017e2107ce85fc3750e9b1e9391
