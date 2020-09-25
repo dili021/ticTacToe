@@ -1,6 +1,6 @@
 /* eslint-disable no-plusplus, no-return-assign, no-use-before-define,
 import/extensions, implicit-arrow-linebreak, operator-linebreak  */
-import * as elements from './DOMelements.js';
+// import * as elements from './DOMelements.js';
 
 const board = () => {
   const field = [null, null, null, null, null, null, null, null, null];
@@ -20,24 +20,19 @@ const board = () => {
 
   const getField = () => field;
 
+
   const getWinLines = () => winLines;
 
   const writeToField = (idx, mark) => {
+    if (!(idx, mark)) throw new Error('Can\'t make a move with no vectors!');
     field[idx] = mark;
   };
 
-  const render = () => {
-    for (let i = 0; i < field.length; i++) {
-      elements.cells[i].textContent = field[i];
-    }
-  };
 
   return {
-    render,
     writeToField,
     getField,
     getWinLines,
   };
 };
-
 export default board;

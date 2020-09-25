@@ -64,7 +64,7 @@ const game = (gameBoard, p1, p2) => {
     board.writeToField(index, mark);
     checkEndGame(board);
     changePlayer();
-    board.render();
+    elements.render(board);
   };
 
   return { play };
