@@ -41,7 +41,7 @@ describe('board', () => {
       null,
     ]);
   });
-  it('doesn\'t return anything when it writeToField is called', () => {
+  it('doesn\'t return anything when writeToField is called', () => {
     expect(testBoard.writeToField(0, 'X')).toEqual(undefined);
   });
   it('throws an error if no arguments are passed', () => {
