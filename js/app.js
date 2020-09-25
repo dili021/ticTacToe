@@ -4,7 +4,7 @@ import * as elements from './DOMelements.js';
 
 import board from './board.js';
 
-import playerFactory from './factories.js';
+import playerFactory from './playerFactory.js';
 
 import inputIsValid from './utils.js';
 

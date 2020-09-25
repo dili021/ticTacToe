@@ -1,6 +1,5 @@
 /* eslint-disable no-plusplus, no-return-assign, no-use-before-define,
 import/extensions, implicit-arrow-linebreak, operator-linebreak  */
-// import * as elements from './DOMelements.js';
 
 const board = () => {
   const field = [null, null, null, null, null, null, null, null, null];
