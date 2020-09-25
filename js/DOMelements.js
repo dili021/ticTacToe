@@ -16,3 +16,10 @@ startButton.addEventListener('click', e => {
   e.preventDefault();
   startModal.style.display = 'none';
 });
+
+
+export const render = board => {
+  for (let i = 0; i < board.getField().length; i += 1) {
+    cells[i].textContent = board.getField()[i];
+  }
+};
