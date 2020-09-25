@@ -1,14 +1,9 @@
 /* eslint-disable no-plusplus, no-return-assign, no-use-before-define,
 import/extensions, implicit-arrow-linebreak, operator-linebreak  */
 import * as elements from './DOMelements.js';
-
 import board from './board.js';
-
 import playerFactory from './playerFactory.js';
-
 import inputIsValid from './utils.js';
-
-// init game
 
 const game = (gameBoard, p1, p2) => {
   const board = gameBoard();
@@ -57,11 +52,10 @@ const game = (gameBoard, p1, p2) => {
     elements.endModal.style.display = 'grid';
   };
 
-  const play = e => {
-    const index = e.target.dataset.cellIdx;
+  const play = ({ target: { dataset: { cellIdx } } }) => {
     const { mark } = currentPlayer;
-    if (!inputIsValid(board, index)) return;
-    board.writeToField(index, mark);
+    if (!inputIsValid(board, cellIdx)) return;
+    board.writeToField(cellIdx, mark);
     checkEndGame(board);
     changePlayer();
     elements.render(board);
